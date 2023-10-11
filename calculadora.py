@@ -1,4 +1,4 @@
-# python 3
+# python 3y
 
 import os
 
@@ -33,7 +33,7 @@ if option1 == 1:
    match option2:
 
          case 1:
-               adição1 = int(input("Qual o primeiro número que quer por para somar?"))
+               adição1 = int(input("Qual o primeiro número que quer por para somar?\n"))
                adição2 = int(input("Qual o segundo?"))
                adi_calcúlo = adição1 + adição2
                print(f"{adição1} + {adição2} =")
@@ -47,6 +47,12 @@ if option1 == 1:
                            with open("histórico.txt", "a") as adi_histórico:
                                 adi_histórico.write(f"\n{adição1} + {adição2} = {adi_calcúlo}")
                                 print(save)
+
+                     case "n":
+                           print("Ok")
+
+                     case _:
+                           print("y ou n")
 
          case 2:
                subtração1 = int(input("Qual o primeiro número? "))
@@ -84,6 +90,34 @@ if option1 == 1:
                              with open("histórico.txt", "a") as mul_histórico:
                                   mul_histórico.write(f"\n{multiplicação1} * {multiplicação2} = {mul_calcúlo}")
                                   print(save)
+                     case "n":
+                             print("Ok")
+
+                     case _:
+                           print("y ou n")
+
+         case 4:
+            divisão1 = int(input("Qual o primeiro?"))
+            divisão2 = int(input("Qual o segundo?"))
+            div_resultado = divisão1 / divisão2
+            print(f"{divisão1} / {divisão2} =")
+            print(div_resultado)
+
+            cal_histórico = input("Quer salvar no histórico?")
+
+            match cal_histórico:
+
+              case "y":
+                with open("histórico.txt", "a") as div_histórico:
+                  div_histórico.write(f"\n{divisão1} / {divisão2} = {div_resultado}")
+                  print(save)
+
+              case "n":
+                print("Ok")
+
+              case _:
+                print("y ou n")
+
          case _:
                print("Coloque o número que corresponde ao tipo de calcúlo")
 
